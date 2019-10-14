@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <title><%= siteTitle %> - <%= pageTitle %></title>
+    <%include ../partials/head %>
+    <style>
+      * {
+        border-radius: 0px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-primary">
+      <span class="navbar-brand" style="color: #fff;"><%= pageTitle %></span>
+    </nav>
+    <br />
+    <p style="color: crimson;"><%= errMessage %></p>
+    <div class="row" style="margin-left: 50px;margin-right: 50px;">
+      <form
+        action="http://localhost:3020/band/register"
+        method="POST"
+        class="col s12""
+      >
+        <div class="form-group row">
+          <label for="name" class="col-2 col-form-label">Name</label>
+          <div class="col-10">
+            <input type="text" name="name" value="" class="form-control" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="company" class="col-2 col-form-label">Company</label>
+          <div class="col-10">
+            <input type="text" name="company" value="" class="form-control" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="dob" class="col-2 col-form-label">Date of birth</label>
+          <div class="col-10">
+            <input type="text" name="dob"
+            placeholder="yyyy-mm-dd" value="" class="form-control" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="email" class="col-2 col-form-label">EmailId</label>
+          <div class="col-10">
+            <input type="text" name="email" value="" class="form-control" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="password" class="col-2 col-form-label">Password</label>
+          <div class="col-10">
+            <input type="text" name="password" value="" class="form-control" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label
+            for="click_here"
+            class="col-2 col-form-label"
+            style="color: #fff;"
+            >click here to Register</label
+          >
+          <div class="col-10">
+            <input
+              type="submit"
+              name="register"
+              value="register"
+              class="btn btn-primary btn-lg"
+            />
+
+            <a href="/band/login">click here to login</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <% include ../partials/footer %>
+  </body>
+</html>

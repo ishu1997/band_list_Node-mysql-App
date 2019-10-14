@@ -1,0 +1,28 @@
+<%include ../partials/header %>
+<br />
+<div class="row" style="margin-left: 50px;margin-right: 50px;">
+  <form action="http://localhost:3020/band/add" method="POST" class="col s12">
+    <input type="hidden" name="Id" value="" />
+    <div class="form-group row">
+      <label for="band_name" class="col-2 col-form-label">Band Name</label>
+      <div class="col-10">
+        <input type="text" name="band_name" value="" class="form-control" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="click_here" class="col-2 col-form-label" style="color: #fff;"
+        >click here to submit</label
+      >
+      <div class="col-10">
+        <input
+          type="submit"
+          name="submit"
+          value="Save band"
+          class="btn btn-primary btn-lg"
+        />
+      </div>
+    </div>
+  </form>
+</div>
+<% include ../partials/footer %>

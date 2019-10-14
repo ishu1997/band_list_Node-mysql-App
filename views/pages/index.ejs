@@ -1,0 +1,45 @@
+<%include ../partials/header %>
+
+<div class="">
+  <div class="col s12" style="margin-top: 20px;">
+    <a href="/band/add" class="btn btn-success btn-lg">add a new band</a>
+  </div>
+</div>
+<br />
+
+<div class="=">
+  <div class="col s12">
+    <% if (items.length > 0){ %>
+    <table class="table">
+      <thead>
+        <tr>
+          <!-- <th style="width: 1%;text-align: center;">Id</th> -->
+          <th style="width: 30%;">Bands</th>
+          <th solspan="2" style="width: 20%; text-align: center;">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% items.forEach(function(item,index){%>
+        <tr>
+          <!-- <td style="width: 1%;text-align: center;"><%=index + 1 %></td> -->
+          <td style="width: 30%;"><%= item.band_name %></td>
+
+          <td solspan="2" style="width: 20%;text-align: center;">
+            <a href="/band/edit/<%= item.band_id %>" class="btn btn-success"
+              >Edit</a
+            >
+            <a href="/band/delete/<%= item.band_id %>" class="btn btn-danger"
+              >Delete</a
+            >
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <% }else{ %>
+    <p><strong>ther are no bands</strong></p>
+    <% } %>
+  </div>
+</div>
+
+<%include ../partials/footer %>
